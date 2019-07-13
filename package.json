@@ -1,6 +1,6 @@
 {
   "name": "split-interval",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Splits a given interval across start and end times",
   "main": "dist/index.js",
   "repository": "https://github.com/jmercha/split-interval",
