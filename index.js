@@ -1,8 +1,14 @@
 const moment = require('moment');
 
-function *splitIntervalGenerator(startDate, endDate, startTime, endTime) {
+const timeValues = time => ({
+    hour: time.get('hour'),
+    minute: time.get('minute'),
+    seconds: time.get('second')
+});
+
+function *generateSplitInterval(startDate, endDate, startTime, endTime) {
     
-    const days = startDate.diff(endDate, 'days');
+    const days = Math.abs(startDate.diff(endDate, 'days'));
     
     // we don't need to split across multiple days
     if (days === 0) {
@@ -10,41 +16,35 @@ function *splitIntervalGenerator(startDate, endDate, startTime, endTime) {
         return;
     }
 
-    const startHour = startTime.get('hour');
-    const startMinute = startTime.get('minute');
-    const startSecond = startTIme.get('second');
-
-    const endHour = startTime.get('hour');
-    const endMinute = startTime.get('minute');
-    const endSecond = startTime.get('second');
+    const startValues = timeValues(startTime);
+    const endValues = timeValues(endTime);
 
     // first interval
     yield {
         start: startDate.toDate(),
-        end: startDate.clone().set({
-            hour: endHour,
-            minute: endMinute,
-            second: endSecond
-        }).toDate()
+        end: startDate.clone().set(endValues).toDate()
     };
 
     // consecutive intervals
     if (days > 1) {
-        for (let day = 1; day < days - 1; ++day) {
+        for (let day = 1; day < days; ++day) {
+            const date = startDate.clone().add(day, 'days');
             yield {
-                start: startDate.add(day, 'days'),
-            }
+                start: date.clone().set(startValues).toDate(),
+                end: date.clone().set(endValues).toDate()
+            };
         }
     }
 
     // final interval
     yield {
-
+        start: endDate.clone().set(startValues).toDate(),
+        end: endDate.toDate()
     };
 }
 
 const splitInterval = (startDate, endDate, startTime, endTime) => [
-    ...splitIntervalGenerator(
+    ...generateSplitInterval(
         moment(startDate),
         moment(endDate),
         moment(startTime, 'hh:mm:ss'),
