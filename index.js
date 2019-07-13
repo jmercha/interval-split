@@ -15,7 +15,7 @@ const validateArgs = (startDate, endDate, startTime, endTime) => {
 
     if (!startDate.isValid()) throw new Error('startDate must be valid');
     if (!endDate.isValid()) throw new Error('endDate must be valid');
-    if (!startTime.isValid()) throw new Error('endDate must be valid');
+    if (!startTime.isValid()) throw new Error('startTime must be valid');
     if (!endTime.isValid()) throw new Error('endTime must be valid');
 
     if (startDate.diff(endDate) > -1) throw new RangeError('startDate must be before endDate'); 
