@@ -7,7 +7,7 @@ const timeValues = time => ({
 });
 
 function *generateSplitInterval(startDate, endDate, startTime, endTime) {
-    
+
     const days = Math.abs(startDate.diff(endDate, 'days'));
     
     // we don't need to split across multiple days
