@@ -1,0 +1,18 @@
+{
+  "name": "interval-split",
+  "version": "1.0.0",
+  "description": "Splits the given interval accross multiple start and end times, over a given datetime range.",
+  "main": "index.js",
+  "repository": "https://github.com/jmercha/interval-split",
+  "author": "John Merchant <john@merchant.on.net>",
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn jest"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
