@@ -1,7 +1,7 @@
 {
   "name": "interval-split",
   "version": "1.0.0",
-  "description": "Splits the given interval accross multiple start and end times, over a given datetime range.",
+  "description": "Splits the given interval across start and end times, over a given datetime range.",
   "main": "index.js",
   "repository": "https://github.com/jmercha/interval-split",
   "author": "John Merchant <john@merchant.on.net>",
