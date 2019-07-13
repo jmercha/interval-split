@@ -11,7 +11,7 @@ it('splits an interval across 3 days', () => {
 
     const result = splitInterval(
         new Date('2019-06-01T12:00:00'),
-        new Date('2019-06-03T12:00:00'),
+        new Date('2019-06-04T12:00:00'),
         '08:30:00',
         '17:00:00'
     );
@@ -19,6 +19,7 @@ it('splits an interval across 3 days', () => {
     expect(result).toEqual([
         { start: new Date('2019-06-01T12:00:00'), end: new Date('2019-06-01T17:00:00') },
         { start: new Date('2019-06-02T08:30:00'), end: new Date('2019-06-02T17:00:00') },
-        { start: new Date('2019-06-03T08:30:00'), end: new Date('2019-06-03T12:00:00') }
+        { start: new Date('2019-06-03T08:30:00'), end: new Date('2019-06-03T17:00:00') },
+        { start: new Date('2019-06-04T08:30:00'), end: new Date('2019-06-04T12:00:00') }
     ]);
 });
