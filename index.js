@@ -6,7 +6,25 @@ const timeValues = time => ({
     seconds: time.get('second')
 });
 
+const validateArgs = (startDate, endDate, startTime, endTime) => {
+    
+    if (startDate === null || typeof startDate === 'undefined') throw new Error('startDate is required');
+    if (endDate === null || typeof endDate === 'undefined') throw new Error('endDate is required');
+    if (startTime === null || typeof startTime === 'undefined') throw new Error('startTime is required');
+    if (endTime === null || typeof endTime === 'undefined') throw new Error('endTime is required');
+
+    if (!startDate.isValid()) throw new Error('startDate must be valid');
+    if (!endDate.isValid()) throw new Error('endDate must be valid');
+    if (!startTime.isValid()) throw new Error('endDate must be valid');
+    if (!endTime.isValid()) throw new Error('endTime must be valid');
+
+    if (startDate.diff(endDate) > -1) throw new RangeError('startDate must be before endDate'); 
+    if (startTime.diff(endTime) > -1) throw new RangeError('startTime must be before endTime'); 
+};
+
 function *generateSplitInterval(startDate, endDate, startTime, endTime) {
+
+    validateArgs(startDate, endDate, startTime, endTime);
 
     const days = Math.abs(startDate.diff(endDate, 'days'));
     

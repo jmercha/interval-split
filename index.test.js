@@ -14,7 +14,7 @@ it('splits an interval across 3 days', () => {
         new Date('2019-06-03T12:00:00'),
         '08:30:00',
         '17:00:00'
-    );``
+    );
 
     expect(result).toEqual([
         { start: new Date('2019-06-01T12:00:00'), end: new Date('2019-06-01T17:00:00') },
