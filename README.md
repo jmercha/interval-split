@@ -1,5 +1,6 @@
 # split-interval [![CircleCI](https://circleci.com/gh/jmercha/split-interval/tree/master.svg?style=svg)](https://circleci.com/gh/jmercha/split-interval/tree/master)
-Splits the given interval across start and end times over a given datetime range.
+
+Splits the given interval across multiple days with start and end times.
 
 ## Usage
 
