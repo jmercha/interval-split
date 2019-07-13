@@ -1,6 +1,6 @@
 {
   "name": "split-interval",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Splits a given interval across start and end times",
   "main": "dist/index.js",
   "types": "index.d.ts",
