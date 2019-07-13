@@ -49,7 +49,7 @@ function *generateSplitInterval(startDate, endDate, startTime, endTime) {
             const date = startDate.clone().add(day, 'days');
             yield {
                 start: date.clone().set(startValues).toDate(),
-                end: date.clone().set(endValues).toDate()
+                end: date.clone().set(endValues).toDate() 
             };
         }
     }
