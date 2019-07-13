@@ -4,8 +4,8 @@ Splits the given interval across start and end times over a given datetime range
 ## Usage
 
 ```
-    const splitInterval = require('split-interval);
-    splitInterval(startDate, endDate, startTime, endTime);
+const splitInterval = require('split-interval);
+splitInterval(startDate, endDate, startTime, endTime);
 ```
 
 ## Arguments
