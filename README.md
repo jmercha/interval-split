@@ -5,7 +5,7 @@ Splits the given interval across multiple days with start and end times.
 ## Usage
 
 ```
-const splitInterval = require('split-interval);
+const splitInterval = require('split-interval’);
 splitInterval(startDate, endDate, startTime, endTime);
 ```
 
