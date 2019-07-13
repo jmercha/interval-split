@@ -7,7 +7,7 @@ it('does not split an interval on the same day', () => {
     expect(result).toEqual([{ start, end }]);
 });
 
-it('splits an interval across 3 days', () => {
+it('splits an interval across 4 days', () => {
 
     const result = splitInterval(
         new Date('2019-06-01T12:00:00'),
