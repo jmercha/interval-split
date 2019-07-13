@@ -1,4 +1,4 @@
-const splitInterval = require('.');
+const splitInterval = require('./index.js');
 
 it('does not split an interval on the same day', () => {
     const start = new Date('2019-06-01T12:00:00');

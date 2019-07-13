@@ -8,14 +8,21 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn jest",
-    "build": "yarn babel index.js -d dist/ --presets=@babel/preset-env"
+    "build": "yarn babel index.js -d dist/"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "dist"
+    ]
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.4",
     "moment": "^2.24.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.4",
     "jest": "^24.8.0"
   }

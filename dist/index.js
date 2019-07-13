@@ -1,16 +1,14 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
 var _marked =
 /*#__PURE__*/
-regeneratorRuntime.mark(generateSplitInterval);
+_regenerator["default"].mark(generateSplitInterval);
 
 var moment = require('moment');
 
@@ -37,7 +35,7 @@ var validateArgs = function validateArgs(startDate, endDate, startTime, endTime)
 
 function generateSplitInterval(startDate, endDate, startTime, endTime) {
   var days, startValues, endValues, day, date;
-  return regeneratorRuntime.wrap(function generateSplitInterval$(_context) {
+  return _regenerator["default"].wrap(function generateSplitInterval$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
@@ -110,7 +108,7 @@ function generateSplitInterval(startDate, endDate, startTime, endTime) {
 }
 
 var splitInterval = function splitInterval(startDate, endDate, startTime, endTime) {
-  return _toConsumableArray(generateSplitInterval(moment(startDate), moment(endDate), moment(startTime, 'hh:mm:ss'), moment(endTime, 'hh:mm:ss')));
+  return (0, _toConsumableArray2["default"])(generateSplitInterval(moment(startDate), moment(endDate), moment(startTime, 'hh:mm:ss'), moment(endTime, 'hh:mm:ss')));
 };
 
 module.exports = splitInterval;
