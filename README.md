@@ -16,6 +16,9 @@ splitInterval(startDate, endDate, startTime, endTime);
 * `startTime` - A `String` in the format `hh:mm:ss` representing the start time of the interval segments
 * `endTime` - A `String` in the format `hh:mm:ss` representing the end of the interval segments
 
+## Return value
+
+Returns an array of `{ start: Date, end: Date }`
 
 ## Example
 
