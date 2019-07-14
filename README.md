@@ -18,7 +18,7 @@ splitInterval(startDate, endDate, startTime, endTime);
 
 ## Return value
 
-Returns an array of `{ start: Date, end: Date }`
+Returns an array of objects representing the split intervals: `[{ start: Date, end: Date }]`
 
 ## Example
 
