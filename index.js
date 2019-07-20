@@ -7,11 +7,6 @@ const timeValues = time => ({
 });
 
 const validateArgs = (startDate, endDate, startTime, endTime) => {
-    
-    if (startDate === null || typeof startDate === 'undefined') throw new Error('startDate is required');
-    if (endDate === null || typeof endDate === 'undefined') throw new Error('endDate is required');
-    if (startTime === null || typeof startTime === 'undefined') throw new Error('startTime is required');
-    if (endTime === null || typeof endTime === 'undefined') throw new Error('endTime is required');
 
     if (!startDate.isValid()) throw new Error('startDate must be valid');
     if (!endDate.isValid()) throw new Error('endDate must be valid');
